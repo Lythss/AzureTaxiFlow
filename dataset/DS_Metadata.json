@@ -1,0 +1,35 @@
+{
+	"name": "DS_Metadata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MetadataDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "BatchID",
+				"type": "varchar"
+			},
+			{
+				"name": "FileType",
+				"type": "varchar"
+			},
+			{
+				"name": "LoadDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Status",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "IngestionMetadata"
+		}
+	}
+}
