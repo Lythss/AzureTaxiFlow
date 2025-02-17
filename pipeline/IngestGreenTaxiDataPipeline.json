@@ -166,7 +166,7 @@
 										"type": "String"
 									},
 									"Status": {
-										"value": "",
+										"value": "\"Loaded\"",
 										"type": "String"
 									}
 								}
