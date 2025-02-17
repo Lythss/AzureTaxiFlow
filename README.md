@@ -49,17 +49,17 @@ cd AzurTaxiFlow
 
 ---
 
-## Deliverables 📦
+## Tech Stack 🛠️
 
-- **Video Explanation**: Walkthrough of the data pipeline.
-- **Architecture Diagram**: LucidChart diagram showing the architecture of the pipeline.
-- **ADF Pipeline Configurations**: Exported JSON files or screenshots of your Data Factory pipeline setup.
-- **Transformation Scripts**: PySpark or SQL scripts for data cleansing and transformation.
-- **Partitioned SQL Tables**: SQL scripts for partitioned tables in Synapse.
-- **Reports and Dashboards**: Key metrics visualized in **Power BI** or **Synapse Studio**.
-- **Monitoring Setup**: Configuration evidence for ADF alerting and **Azure Monitor** integration.
-- **Purview Setup**: Cataloging, lineage, and classification configuration in **Azure Purview**.
-- **Key Vault Configuration**: Use of **Azure Key Vault** to manage secrets securely.
+- **Azure Data Factory** (ADF) - for data orchestration and pipeline automation 🔄
+- **Azure Synapse Analytics** - for data transformation and analytics 📊
+  - **Spark Pool** - for distributed data processing 🔥
+  - **SQL Pool** - for dedicated data warehousing 🗂️
+- **Azure Data Lake Storage Gen2** (ADLS Gen2) - for data storage and management 💾
+- **Azure Key Vault** - for securing secrets and credentials 🔐
+- **Azure Purview** - for data governance, lineage, and cataloging 📚
+- **Power BI** - for data visualization and reporting 📈
+- **PySpark** - for data transformation and cleaning (Spark) 🐍
 
 ---
 
