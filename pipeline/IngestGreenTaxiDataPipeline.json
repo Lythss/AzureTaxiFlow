@@ -1,0 +1,6 @@
+{
+	"name": "IngestGreenTaxiDataPipeline",
+	"properties": {
+		"annotations": []
+	}
+}
