@@ -83,7 +83,14 @@
 			{
 				"name": "If_NotAlreadyLoaded",
 				"type": "IfCondition",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Lookup_IngestionMetadata",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
