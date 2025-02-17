@@ -13,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "/trip-data/green_tripdata_2024-01.parquet"
+					},
+					{
+						"name": "Destination",
+						"value": "green/2024-01/green_tripdata_2024-01.parquet"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "BinarySource",
