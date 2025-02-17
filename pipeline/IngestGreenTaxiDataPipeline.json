@@ -13,6 +13,10 @@
 			"folderPath": {
 				"type": "string",
 				"defaultValue": "\"green/2024-01/\""
+			},
+			"fileName": {
+				"type": "string",
+				"defaultValue": "\"green_tripdata_2024-01.parquet\""
 			}
 		},
 		"annotations": []
