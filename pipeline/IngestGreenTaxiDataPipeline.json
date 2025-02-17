@@ -155,11 +155,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"storedProcedureParameters": {
-									"undefined": {
-										"value": ""
-									}
-								}
+								"storedProcedureName": "[dbo].[usp_InsertIngestionMetadata]"
 							},
 							"linkedServiceName": {
 								"referenceName": "LS_MetadataDB",
