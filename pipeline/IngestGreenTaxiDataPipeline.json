@@ -70,6 +70,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlDWSource",
+						"sqlReaderQuery": "SELECT BatchID FROM IngestionMetadata \nWHERE BatchID = '@{pipeline().parameters.batch}' \n  AND FileType = 'green'\n",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
