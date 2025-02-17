@@ -154,6 +154,13 @@
 								"secureInput": false
 							},
 							"userProperties": [],
+							"typeProperties": {
+								"storedProcedureParameters": {
+									"undefined": {
+										"value": ""
+									}
+								}
+							},
 							"linkedServiceName": {
 								"referenceName": "LS_MetadataDB",
 								"type": "LinkedServiceReference"
