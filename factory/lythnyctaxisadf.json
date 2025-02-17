@@ -1,0 +1,9 @@
+{
+	"name": "lythnyctaxisadf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8c96c206-719c-4021-a19e-f1c936937ea0",
+		"tenantId": "a2e466aa-4f86-4545-b5b8-97da7c8febf3"
+	}
+}
