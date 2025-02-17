@@ -157,8 +157,17 @@
 							"typeProperties": {
 								"storedProcedureName": "[dbo].[usp_InsertIngestionMetadata]",
 								"storedProcedureParameters": {
-									"undefined": {
-										"value": ""
+									"BatchID": {
+										"value": "",
+										"type": "String"
+									},
+									"FileType": {
+										"value": "",
+										"type": "String"
+									},
+									"Status": {
+										"value": "",
+										"type": "String"
 									}
 								}
 							},
