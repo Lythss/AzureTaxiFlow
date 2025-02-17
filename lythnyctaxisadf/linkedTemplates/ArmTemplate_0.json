@@ -139,6 +139,96 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LS_GreenTaxiHTTP')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/IngestGreenTaxiDataPipeline')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy_GreenTaxiData",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "/trip-data/green_tripdata_2024-01.parquet"
+							},
+							{
+								"name": "Destination",
+								"value": "green/2024-01/green_tripdata_2024-01.parquet"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "BinarySource",
+								"storeSettings": {
+									"type": "HttpReadSettings",
+									"requestMethod": "GET"
+								},
+								"formatSettings": {
+									"type": "BinaryReadSettings"
+								}
+							},
+							"sink": {
+								"type": "BinarySink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								}
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "DS_GreenTaxiSource",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DS_GreenTaxiSink",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"batch": {
+						"type": "string",
+						"defaultValue": "\"2024-01\""
+					},
+					"filePath": {
+						"type": "string",
+						"defaultValue": "\"/trip-data/green_tripdata_2024-01.parquet\""
+					},
+					"folderPath": {
+						"type": "string",
+						"defaultValue": "\"green/2024-01/\""
+					},
+					"fileName": {
+						"type": "string",
+						"defaultValue": "\"green_tripdata_2024-01.parquet\""
+					}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/DS_GreenTaxiSource')]",
+				"[concat(variables('factoryId'), '/datasets/DS_GreenTaxiSink')]"
+			]
 		}
 	]
 }
