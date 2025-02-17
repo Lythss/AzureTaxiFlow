@@ -158,11 +158,11 @@
 								"storedProcedureName": "[dbo].[usp_InsertIngestionMetadata]",
 								"storedProcedureParameters": {
 									"BatchID": {
-										"value": "",
+										"value": "@pipeline().parameters.batch",
 										"type": "String"
 									},
 									"FileType": {
-										"value": "",
+										"value": "\"green\"",
 										"type": "String"
 									},
 									"Status": {
