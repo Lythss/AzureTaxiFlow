@@ -79,6 +79,18 @@
 						"type": "DatasetReference"
 					}
 				}
+			},
+			{
+				"name": "If_NotAlreadyLoaded",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(activity('Lookup_IngestionMetadata').output.firstRow, null)\n",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
