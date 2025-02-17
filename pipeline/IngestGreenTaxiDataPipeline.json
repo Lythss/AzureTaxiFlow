@@ -1,6 +1,20 @@
 {
 	"name": "IngestGreenTaxiDataPipeline",
 	"properties": {
+		"parameters": {
+			"batch": {
+				"type": "string",
+				"defaultValue": "\"2024-01\""
+			},
+			"filePath": {
+				"type": "string",
+				"defaultValue": "\"/trip-data/green_tripdata_2024-01.parquet\""
+			},
+			"folderPath": {
+				"type": "string",
+				"defaultValue": "\"green/2024-01/\""
+			}
+		},
 		"annotations": []
 	}
 }
