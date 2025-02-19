@@ -25,7 +25,7 @@ AzurTaxiFlow is a comprehensive data pipeline built with Azure services to autom
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/your-username/AzurTaxiFlow.git
-cd AzurTaxiFlow
+cd AzureTaxiFlow
 ```
 
 ## 2. Prerequisites ⚙️
