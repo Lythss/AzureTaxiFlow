@@ -76,7 +76,56 @@ For any inquiries or issues, feel free to reach out to [Your Name] at [Your Emai
 ---
 
 ## Architecture Diagram 📊
-![Architecture Diagram](path-to-your-diagram.png)
+                           +----------------------------+
+                           |        Microsoft         |
+                           |         Purview          |
+                           | (Data Catalog & Governance)|
+                           +----------------------------+
+                                      ▲
+                                      │  (data scanning, catalog)
+                                      │
+                    +-----------------┴-----------------+
+                    |         Azure Synapse           |
+                    |         Analytics Workspace     |
+                    |        (nyctaxisynapse)         |
+                    |                                 |
+                    |  +-------------------------+    |
+                    |  |     Spark Pool          |    |   <-- Transformation,
+                    |  |  (PySpark Notebooks)    |    |       Data Processing
+                    |  +-------------------------+    |
+                    |  +-------------------------+    |
+                    |  | Dedicated SQL Pool      |    |   <-- Data Warehouse for Analytics
+                    |  +-------------------------+    |
+                    +-----------------┬-----------------+
+                                      │
+                                      │
+            +-------------------------┴--------------------------+
+            |                Azure Data Factory                  |
+            |                (nyctaxiadf)                        |
+            |  - Ingestion Pipelines (e.g., IngestNYCTaxiDataPipeline)|
+            |  - Orchestration & Scheduling (Triggers)           |
+            |  - Linked Services to ADLS, Synapse, Key Vault, etc. |
+            +-------------------------┬--------------------------+
+                                      │
+                                      │ (Copy / Transform)
+                                      ▼
+                    +-------------------------+
+                    | Azure Data Lake Storage |
+                    |     Gen2 (nyctaxistorage) |
+                    |                         |
+                    |  - Container: raw       |  <-- Raw files from external sources
+                    |  - Container: curated   |  <-- Processed/Transformed data
+                    +-------------------------+
+                                      ▲
+                                      │
+                                      │  (Secrets Management)
+                                      │
+                    +-----------------┴-----------------+
+                    |         Azure Key Vault           |
+                    |   (Stores connection strings,     |
+                    |    keys, and other secrets)       |
+                    +-----------------------------------+
+
 
 
 
